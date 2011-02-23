@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10sp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Miłosz Biedrzycki" >
+	</TextView>
+
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10sp"
+	    android:textSize="12sp"
+	    android:text='Ur. 1967 rok w Koprze w Słowenii. Najważniejsze dzieła * (,,Gwiazdka", 1993), OO (,,Dwa groszki", 1994), Pył/Łyp (1997), Słońce na asfalcie (2003), 69 (2006), wygrzebane (2007), Sofostrofa i inne wiersze (2007). Jeden z czołowych poetów tzw. pokolenia brulionu. Publikował m.in. w »brulionie«, »Frondzie« i »Czasie kultury«. Wszystkie swoje wiersze udostępnia w sieci na autorskiej stronie. Tłumacz z języka słoweńskiego. Pseudonim: MLB.' >
+	</TextView>
+	
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="10dp"
+	    android:paddingBottom="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10sp"	    
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text='Lista utworów:' >
+	</TextView>	
+	
+	<ListView 
+    	android:id="@+id/catalogueBookListView"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"    	
+    />
+	
+
+</LinearLayout>

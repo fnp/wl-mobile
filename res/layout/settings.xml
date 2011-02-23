@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TextView
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:padding="10sp"
+    	android:textStyle="bold"
+    	android:textSize="16sp"
+    	android:text="Settings" 
+    />
+    
+    <CheckBox
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:checked="true"
+    	android:textSize="14sp"    	
+    	android:hint="Stay signed in"
+    	android:layout_marginRight="10sp"
+    	android:layout_marginLeft="10sp"     	    
+    />
+
+    <CheckBox
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:checked="true"
+    	android:textSize="14sp"    	
+    	android:hint="Check updates only while on WiFi"
+    	android:layout_marginRight="10sp"
+    	android:layout_marginLeft="10sp"     	    
+    />
+    
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Półki">
+	</TextView>	
+
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="14sp"
+	    android:textStyle="italic"
+	    android:text="Miłosz Biedrzycki, 'Hołd na dwa sonety'">
+	</TextView>	
+
+	<Button 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="14sp"
+	    android:height="70sp"	    
+	    android:text="Dodaj na półkę"
+	    android:id="@+id/putOnShelf"	    
+	/>
+    
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Lista półek:">
+	</TextView>	
+
+	<ListView 
+    	android:id="@+id/catalogueShelvesListView"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"    	
+    />
+
+	<Button 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="14sp"
+	    android:height="70sp"
+	    android:id="@+id/addShelf"	    
+	    android:text="Utwórz nową półkę"	    
+	/>
+	
+</LinearLayout>

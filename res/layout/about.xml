@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+	<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    >
+
+			    <TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textStyle="bold"
+			    	android:textSize="16sp"
+			    	android:text="About" 
+			    />
+			    
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Web library with the school obligatory readings "Wolne Lektury" (www.wolnelektury.pl) is a project carried out by Modern Poland Foundation. Wolne Lektury website works since 2007. It provides the visitors with the school readings recommended Ministerstwo Edukacji Narodowej which entered the public domain. The literary works are drawn up, annotated and available in several formats (html, epub, mp3, ogg, odt, txt and pdf). Under the Polish law, they can be read online, downloaded, cited and shared.'
+			    />
+			    
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Wolne Lektury project team comprises experienced editors and teachers so that our website content is solid and reliable. To create it, we cooperate with National Library which provides us with the best available editions of the books as well as the critical studies of the school readings, published in Digital National Library Polona. Together we try our best to make the texts of the books (our cultural legacy) available for everyone, regardless of where one is living, how much money does one have or whether one is handicapped or not. It is possible only due to the public domain concept, meaning a collection of literary works that are not copyrighted, as well as high technologies - tools that let us increase availability of the text published on the Internet.'
+			    />
+
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Wolne Lektury project is completely uncommercial and it is carried out pro publico bono. Therefore the support of the eminent personages conncted with culture and sciences is very important for us. Wolne Lektury project is held under the honorary patronage of Ministerstwo Kultury i Dziedzictwa Narodowego, Ministerstwo Edukacji Narodowej and Polish Writers Association. In the Honorary Comitee of Wolne Lektury agreed to sit Professor Maria Janion, Professor Grażyna Borkowska, Professor Przemysław Czapliński, Professor Mieczysław Dąbrowski, Professor Ewa Kraskowska, Professor Małgorzata Czermińska, Professor Jerzy Jarzębski and Professor Piotr Śliwiński.'
+			    />
+
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Digitalisation and proofreading is provided by the National Library. The website was designed by 2ia. The author of the programming language of the repository of Free Literature texts, based on the XML language is Dariusz Gałecki. Grynhoff, Woźny, Maliński office provides us with the legal service. Web hosting is provided by EO Networks company. Publishing house Korporacja Ha!Art helps us in proofreading. The logo of Wolne Lektury is a creation of PZL agency. The project is held under media patronage of: Dziennik, Elle, Tok.fm, Biblioteka Analiz, Tygodnik Powszechny, Przekrój and TVP Kultura.'
+			    />			        
+
+			    <TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textStyle="bold"
+			    	android:textSize="16sp"
+			    	android:text="About the foundation" 
+			    />
+
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Modern Poland Foundation was established because education of children is a key to the future. One of the most important objectives that Polish education has to approach is a struggle with digital retardation. The skill in using a computer and the Internet is a kind of elemental knowledge in the age of information society. One who does not have it, is condemned to a vegetative existence on the fringes of modern world.'
+			    />	
+
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='It is the reason why for seven years we have helped (and still do) the children in understanding and using the high technologies. Modern Poland Foundation wants to give a thousands of children what is the most valuable: knowledge and abilities letting them understand modern world and take advantage of its opportunities.'
+			    />	
+
+				<TextView
+					android:layout_width="fill_parent"
+			    	android:layout_height="wrap_content"
+			    	android:padding="10sp"
+			    	android:textSize="12sp"
+			    	android:text='Modern Poland Fundation - apart from Wolne Lektury project - is as well coordinating Wolne Podręczniki project. It is created by a social movement of voluteering teachers. With the use of the Internet, they are writing new coursebooks for Polish pupils. Wolne Podręczniki are published openly-licensed (meaning it gives the user certain copyright freedom i.e. the books can be copied, distributed and updated without the necessity of asking the team of authors for permission). Every teacher will be able to supplement, expand and improve the coursebooks in accordance with to their own needs and experience. Thanks to the open source the price of the traditional coursebooks published in printed format will seriously decrease and the access to the electronic coursebooks will be free.'
+			    />	
+    	</LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Półka: Moje lektury">
+	</TextView>	
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Lista utworów:">
+	</TextView>
+	
+	<ListView 
+    	android:id="@+id/catalogueShelvesBookListView"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"    	
+    />	
+</LinearLayout>

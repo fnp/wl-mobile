@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TextView
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:padding="10sp"
+    	android:textStyle="bold"
+    	android:textSize="16sp"
+    	android:text="Sign in" 
+    	android:layout_marginRight="10sp" 
+    />
+
+    <TextView
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="20sp"
+    	android:textStyle="italic"
+    	android:text="Sign up to create your own shelves, access them online and share with your friends." 
+    	android:layout_marginRight="10sp"
+    	android:layout_marginLeft="10sp"     	 
+    />
+    
+    <TextView
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="Login"
+    	android:layout_marginLeft="10sp" 
+    	android:layout_marginRight="10sp" 
+    />
+	
+	<EditText
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="Login"
+    	android:layout_marginLeft="10sp"     	
+    	android:layout_marginRight="10sp" 
+    />
+    	
+    <TextView
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="Password" 
+    	android:layout_marginLeft="10sp"     	
+    	android:layout_marginRight="10sp" 
+    />        
+
+	<EditText
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="Password"
+    	android:layout_marginLeft="10sp"     	
+    	android:layout_marginRight="10sp"     
+    />
+    
+    
+    <CheckBox
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:checked="true"
+    	android:hint="Stay signed in"
+    	android:layout_marginLeft="10sp"  
+    	android:layout_marginRight="10sp"     	  	   
+    />
+    
+	<Button	    
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="Sign in"
+    	android:height="70sp"
+    	android:id="@+id/sign_in"
+    	android:layout_marginTop="20sp" 
+    	android:layout_marginLeft="10sp"     	
+    	android:layout_marginRight="10sp" 
+    />
+
+	<Button	    
+		android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:height="70sp"
+    	android:text="No account? Sign up!"
+    	android:layout_marginLeft="10sp"
+    	android:layout_marginRight="10sp" 
+    />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="14sp"
+	    android:textStyle="bold"
+	    android:text="Miłosz Biedrzycki">
+	</TextView>
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="10dp"
+	    android:textSize="16sp"
+	    android:textStyle="bold"
+	    android:text="Hołd (Dwa sonety)" >
+	</TextView>
+	
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="12sp"
+	    android:text='Utwór jest udostępniony na licencji Creative Commons Uznanie Autorstwa - Na Tych Samych Warunkach 3.0.PL. Na podstawie: Miłosz Biedrzycki, * ("Gwiazdka"), Fundacja "brulion", Kraków-Warszawa, 1993' >
+	</TextView>	
+	
+	<Button
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="14sp"
+	    android:height="70sp"
+	    android:text="Czytaj on-line"
+	    android:id="@+id/read_online"
+	    
+	 />
+
+	<Button 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="14sp"
+	    android:height="70sp"	    
+	    android:text="Pobierz EPUB"	    
+	/>
+	
+	<Button
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:textSize="14sp"
+	    android:height="70sp"	    
+	    android:text="Słuchaj audiobooka"	    
+	/>	
+	
+</LinearLayout>
