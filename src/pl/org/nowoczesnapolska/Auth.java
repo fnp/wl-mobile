@@ -35,7 +35,7 @@ public class Auth extends Activity {
 	private OAuthProvider mProvider;
 	private String mCallbackUrl;
 	private String authURL;
-	private String apiURL = "http://192.168.148.129/api/";	
+	private String apiURL = "http://epsilon.nowoczesnapolska.org.pl/api/";	
 	
 	@Override
 	public void onResume(){
@@ -48,11 +48,11 @@ public class Auth extends Activity {
 				Log.d("resume", "token0: "+token[0]);
 				Log.d("resume", "token1: "+token[1]);
 				
-				String accessToken[] = AuthHelper.getAccessToken(token[1]);
+				//String accessToken[] = AuthHelper.getAccessToken(token[1]);
 
-				Log.d("resume", "token0: " + accessToken[0]);
-				Log.d("resume", "token1: " + accessToken[1]);				
-				mConsumer = new CommonsHttpOAuthConsumer(accessToken[0], accessToken[1]);
+				Log.d("resume", "token0: " + token[0]);
+				Log.d("resume", "token1: " + token[1]);				
+				mConsumer = new CommonsHttpOAuthConsumer(token[0], token[1]);
 				
 				final URL url = new URL(apiURL+"tags/abc.json");
 				Log.d("url", "token1: "+url.toString());
@@ -65,15 +65,11 @@ public class Auth extends Activity {
 				HttpClient httpClient = new DefaultHttpClient();
 				HttpResponse response = httpClient.execute(request);
 				
-				
 			} catch (OAuthMessageSignerException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (OAuthNotAuthorizedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			} catch (OAuthExpectationFailedException e) {
-				// TODO Auto-generated catch block
+				// TODO Auto-generated catch block11
 				e.printStackTrace();
 			} catch (OAuthCommunicationException e) {
 				// TODO Auto-generated catch block

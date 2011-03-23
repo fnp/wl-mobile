@@ -20,7 +20,7 @@ public class AuthHelper {
 	private static OAuthConsumer mConsumer;
 	private static OAuthProvider mProvider;
 	private static String mCallbackUrl;
-	private static String apiURL = "http://192.168.148.129/api/";
+	private static String apiURL = "http://epsilon.nowoczesnapolska.org.pl/api/";
 
 	public static void OAuthHelper(String consumerKey, String consumerSecret, String callbackUrl)
 	throws UnsupportedEncodingException {
@@ -30,7 +30,7 @@ public class AuthHelper {
 				apiURL+"oauth/access_token/",
 				apiURL+"oauth/authorize/");
 		mProvider.setOAuth10a(true);
-		mCallbackUrl = (callbackUrl == null ? OAuth.OUT_OF_BAND : callbackUrl);
+		mCallbackUrl = "wl://";
 	}    
 
 

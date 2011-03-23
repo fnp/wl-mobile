@@ -3,6 +3,8 @@ package pl.org.nowoczesnapolska;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,12 +29,30 @@ public class CatalogueItem extends Activity {
 	static final private int MENU_SETTINGS = Menu.FIRST+2;	
 	static final private int MENU_ABOUT = Menu.FIRST+3;
 	
+	private SQLiteDatabase db;
+	
 	Context ctx;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.catalogue_item_details);
         ctx = this;
+        
+        int id   = getIntent().getIntExtra("id", 0);
+        int type = getIntent().getIntExtra("type", 0);
+        String[] options = new String[2];
+        options[0] = new String(id+"");
+        options[1] = new String(type+"");
+        
+        /*if(type == 0){
+        	// books
+        	Cursor c = db.rawQuery("select * from books where id = ?", options);
+        } else {
+        	// tags
+        }*/
+        
+		CatalogueDbHelper dbHelper = new CatalogueDbHelper(ctx);        
+		db = dbHelper.getWritableDatabase();
 
         final ListView lv = (ListView) findViewById(R.id.catalogueBookListView);
         

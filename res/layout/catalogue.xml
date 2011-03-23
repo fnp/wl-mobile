@@ -15,6 +15,13 @@
     <ListView 
     	android:id="@+id/catalogueListView"
     	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"    	
+    	android:layout_height="wrap_content" 
     />
+	<EditText
+	    android:id="@+id/cataloguePrompt"
+	    android:orientation="vertical"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="Please type in author, book title, epoch, kind, genre or theme. (At least 2 characters)"
+    />    
 </LinearLayout>
