@@ -1,0 +1,84 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.spinner {
+	padding: 5em;
+}
+
+#searchbox {
+	font-size: 1.5em;
+	background: #84bf2a;
+	padding: 5px;
+	display: none;
+}
+#search {
+	border: none;
+	width: 100%;
+	padding: 5px 0 5px 0;
+}
+#swrap {
+	margin-right:85px;
+}
+#searchbutton {
+	width:80px;
+	float:right;
+}
+#logo {
+	padding: 1em;
+	text-align:center;
+}
+#content {
+    padding: 10px;
+}
+.buttons a {
+	display: block;
+	background: #b6e372;
+    font-size: 20px;
+	padding: 1em;
+	border-radius: 8px;
+    -webkit-border-radius: 8px;
+	/*margin: 0.5em;*/
+	text-align:center;
+	color: #295158;
+	text-decoration: none;
+}
+
+.book-list a {
+    display: block;
+    background: #eee;
+    font-size: 16px;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    text-align:center;
+    color: #295158;
+    text-decoration: none;
+}
+
+a.Book {
+    background: #ccc;
+}
+
+h1 .subheader {
+	display:block;
+	font-size: 70%;
+}
+.upper {
+	text-transform: capitalize;
+}
+
+
+.footer {
+	color: #888;
+	border-top: 1px solid #888;
+	margin-top: 2em;
+	font-size: 0.9em;
+}
+.footer a {
+	color: #888;
+}

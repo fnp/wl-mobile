@@ -1,0 +1,9 @@
+/bin/
+*.db
+
+.project
+.pydevproject
+.settings
+
+
+
