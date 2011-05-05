@@ -396,7 +396,7 @@ var Catalogue = new function() {
 
 	/* check if DB needs updating and upload a fresh copy, if so */
 	this.updateDB = function(success, error) {
-		var db_ver = '0.1.3';
+		var db_ver = '0.1.4';
 		if (window.localStorage.getItem('db_ver') == db_ver) {
 			console.log('db ok, skipping')
 			success && success();
