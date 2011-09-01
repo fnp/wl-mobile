@@ -39,7 +39,7 @@ public class Downloader extends Plugin{
  
  }
  
- private PluginResult downloadUrl(String fileUrl, String dirName, String fileName, String overwrite){
+ PluginResult downloadUrl(String fileUrl, String dirName, String fileName, String overwrite){
  try{
  Log.d("DownloaderPlugin", "DIRECTORY CALLED "+dirName+" created");
  File dir =     new File(dirName);
@@ -56,6 +56,7 @@ public class Downloader extends Plugin{
  }
  
  URL url = new URL(fileUrl);
+ Log.d("DownloaderPlugin", "connecting to server for downloading " + url);
  HttpURLConnection ucon = (HttpURLConnection) url.openConnection();
  ucon.setRequestMethod("GET");
  ucon.setDoOutput(true);

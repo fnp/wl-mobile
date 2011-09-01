@@ -1,16 +1,25 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-size: 12px;
+	/*font-size: 13px;*/
 	font-family: verdana, arial, helvetica, sans-serif;
 }
 
 .spinner {
-	padding: 5em;
+	margin-top: 4em;
+	text-align: center;
+}
+#spinnertext {
+	margin-top: 2em;
+	font-size: .7em;
+}
+
+#cover {
+	width: 100%;
 }
 
 #searchbox {
-	font-size: 1.5em;
+	font-size: 1.25em;
 	background: #84bf2a;
 	padding: 5px;
 	display: none;
@@ -27,41 +36,55 @@ body {
 	width:80px;
 	float:right;
 }
-#logo {
-	padding: 1em;
-	text-align:center;
-}
 #content {
     padding: 10px;
 }
-.buttons a {
+.button {
 	display: block;
-	background: #b6e372;
-    font-size: 20px;
-	padding: 1em;
+	background: #ddd;
+    font-size: 1.25em;
+	padding: .5em;
+	margin-bottom: .5em;
 	border-radius: 8px;
     -webkit-border-radius: 8px;
-	/*margin: 0.5em;*/
-	text-align:center;
 	color: #295158;
-	text-decoration: none;
+}
+.button img {
+	margin-right: .5em;
+	vertical-align: middle;
+}
+.button .sub {
+	font-size: .7em;
+}
+.button .note {
+	font-size: .5em;
+	text-align: right;
+}
+.button img {
+	float:left;
+}
+.button .label {
+	margin-left: 32px;
 }
 
-.book-list a {
-    display: block;
-    background: #eee;
-    font-size: 16px;
-    padding: 15px;
-    margin: 5px;
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    text-align:center;
-    color: #295158;
-    text-decoration: none;
-}
-
-a.Book {
+.button-Book {
     background: #ccc;
+}
+.button-BookText {
+    background: #ccc;
+}
+.delete {
+	float: right;
+	width: 24px;
+
+	background: #464646;
+    font-size: 1.25em;
+	padding: .5em;
+	margin-bottom: .5em;
+	border-radius: 8px;
+    -webkit-border-radius: 8px;
+	color: white;
+	text-align: center;
 }
 
 h1 .subheader {
@@ -74,11 +97,24 @@ h1 .subheader {
 
 
 .footer {
-	color: #888;
-	border-top: 1px solid #888;
-	margin-top: 2em;
-	font-size: 0.9em;
+	font-size: 0.75em;
+	text-align: center;
 }
-.footer a {
-	color: #888;
+
+.clr {
+	clear: both;
+}
+
+
+.info dt {
+	display: inline;
+	font-weight: bold;
+}
+
+.info dd {
+	display: inline;
+	margin: 0;
+}
+.info img {
+	max-width: 100%;
 }

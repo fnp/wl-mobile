@@ -223,6 +223,7 @@
 
 #book-text blockquote {
     font-size: 0.875em;
+    margin: 0 0 0 1em;
 }
 
 /* ============= */

@@ -3,10 +3,21 @@
 <head>
     <title>Wolne Lektury</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" charset="utf-8" src="js/phonegap.0.9.4.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/assetcopy.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/phonegap-1.0.0.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/dbput.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/downloader.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/menuinterface.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/catalogue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/filerepo.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/history.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/links.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/menu.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/view.js"></script>
+
     <link rel="stylesheet" type="style/css" href="css/style.css" />
     <link rel="stylesheet" type="style/css" href="css/book_text.css" />
 </head>
@@ -20,16 +31,13 @@
     </form>
 </div>
 
+<img id="cover" src="img/cover.jpg" />
 <div id="content">
-
-<div class="spinner">
-<img src="img/spinner.gif" /><br/>
-<span id="spinnertext">Ładowanie</span
+<p class='footer'>Uruchamianie…</p>
 </div>
 
 </div>
-<div class="footer">Wersja testowa (0.1 beta). Kontakt: <a href='mailto:wolnelektury@nowoczesnapolska.org.pl'>wolnelektury@nowoczesnapolska.org.pl</a></div>
 
-
+<div id='nothing'></div>
 </body>   
 </html>
