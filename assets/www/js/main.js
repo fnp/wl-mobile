@@ -7,6 +7,10 @@ var VERSION = '1.0';
 var WL = 'http://www.wolnelektury.pl';
 
 
+// disable debugging
+console.log = function(text) {};
+
+
 function onLoad() {
 	console.log('onLoad');
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -58,4 +62,4 @@ var prettySize = function(size) {
         return Math.round(size*10)/10 + ' ' + unit;
     }
     return Math.round(size) + ' ' + unit;
-}
+};
