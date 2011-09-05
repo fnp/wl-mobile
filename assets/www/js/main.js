@@ -3,7 +3,6 @@
  * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
  */
 
-var VERSION = '1.0';
 var WL = 'http://www.wolnelektury.pl';
 
 
