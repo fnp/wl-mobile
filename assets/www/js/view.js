@@ -1,3 +1,8 @@
+/*
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
+ */
+
 var View = new function() {
 	var self = this;
 	//self.minOffset = 1000;
@@ -353,6 +358,9 @@ var View = new function() {
 			"Creative Commons Uznanie Autorstwa - Na Tych Samych Warunkach 3.0.PL</a>.</p>";
 
 		html += "<p style='text-align:center'><img src='img/cc-by-sa.png' /></p>";
+
+		html += "<p>Copyright © 2011 Fundacja Nowoczesna Polska. Aplikacja jest wolnym oprogramowaniem "+
+				"dostępnym na licencji GNU Affero GPL w wersji 3 lub późniejszej.</p>";
 
 		html += "<p>Więcej informacji o projekcie znajduje sie na stronie <a href='http://www.wolnelektury.pl'>http://www.wolnelektury.pl</a>.</p>";
 

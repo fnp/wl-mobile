@@ -1,7 +1,11 @@
+/*
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
+ */
+
 body {
 	padding: 0;
 	margin: 0;
-	/*font-size: 13px;*/
 	font-family: verdana, arial, helvetica, sans-serif;
 }
 

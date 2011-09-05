@@ -1,3 +1,8 @@
+/*
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
+ */
+
 var DB_VER = '0.9.15';
 
 var WL_INITIAL = WL + '/media/api/mobile/initial/initial.db';

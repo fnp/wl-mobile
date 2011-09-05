@@ -1,8 +1,9 @@
-package pl.org.nowoczesnapolska.wlmobi;
-
 /*
- @author Radek Czajka
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
  */
+
+package pl.org.nowoczesnapolska.wlmobi;
 
 import org.json.JSONArray;
 import org.json.JSONException;

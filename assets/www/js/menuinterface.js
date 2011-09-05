@@ -1,3 +1,8 @@
+/*
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
+ */
+
 /**
  *  
  * @return Object literal singleton instance of MenuInterface
