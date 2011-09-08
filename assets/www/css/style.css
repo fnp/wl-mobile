@@ -6,12 +6,37 @@
 body {
 	padding: 0;
 	margin: 0;
+	background: white;
 	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.night-mode {
+	color: #ddd;
+	background: #222;
+}
+.night-mode #search {
+	color: #ddd;
+	background: #222;
 }
 
 .spinner {
 	margin-top: 4em;
 	text-align: center;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+.spinner img {
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-iteration-count: 10;
+	-webkit-animation-direction: right;
+	-webkit-animation-timing-function:linear;
 }
 #spinnertext {
 	margin-top: 2em;

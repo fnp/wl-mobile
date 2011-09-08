@@ -33,6 +33,9 @@ var View = new function() {
 		self.currentTitle = '';
 
 		document.getElementById("cover").style.display = 'none';
+
+		self.checkNightMode();
+
 		self.enter('');
 
 		success && success();
@@ -54,7 +57,8 @@ var View = new function() {
 	this.spinner = function(text) {
 		if (!text)
 			text = "Ładowanie";
-		self._content.innerHTML = "<div class='spinner'><img src='img/spinner.gif' /><div id='spinnertext'>" + text +"</div></div>";
+		self._content.innerHTML = "";
+		self._content.innerHTML = "<div class='spinner'><img src='img/spinner.png' /><div id='spinnertext'>" + text +"</div></div>";
 		setOffset(0);
 	};
 
@@ -444,6 +448,32 @@ var View = new function() {
 		return false;
 	}
 	
-	
 
+	self.getNightMode = function() {
+	   	night_mode = window.localStorage.getItem('View.night_mode');
+	  	if (night_mode === undefined)
+	   		return false;
+	   	else
+	   		return !!night_mode;
+	};
+
+	self.checkNightMode = function() {
+    	night_mode = self.getNightMode();
+		if (night_mode) {
+			document.body.setAttribute("class", "night-mode");
+		}
+		else {
+			document.body.setAttribute("class", "");
+		}
+	};
+
+	self.setNightMode = function(night_mode) {
+		night_mode = night_mode ? "1" :  "";
+    	window.localStorage.setItem('View.night_mode', night_mode);
+    	self.checkNightMode();
+	};
+
+	self.toggleNightMode = function(night_mode) {
+		self.setNightMode(!self.getNightMode());
+	};
 }

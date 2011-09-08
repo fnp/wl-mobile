@@ -26,5 +26,16 @@ var MenuInterface = {
 			[label, enabled]
 		);
 	},
+	setNightMode: function(enabled, win, fail) {
+		if (enabled == false) enabled = "false";
+		else enabled = "true";
+		return PhoneGap.exec(
+			win, 
+			fail, 
+			"MenuInterface", 
+			"setNightMode", 
+			[enabled]
+		);
+	},
 };
 

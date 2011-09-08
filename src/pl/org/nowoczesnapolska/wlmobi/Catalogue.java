@@ -5,6 +5,7 @@
 
 package pl.org.nowoczesnapolska.wlmobi;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -23,18 +24,22 @@ public class Catalogue extends DroidGap {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         super.loadUrl("file:///android_asset/www/index.html");
+
+        MenuInterface.view = appView;
 
         WebSettings settings = this.appView.getSettings();
         settings.setSupportZoom(true);
         settings.setBuiltInZoomControls(true);
     }
 
-    @Override
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
     	menu.add(Menu.NONE, 1, 1, "Początek");
-    	menu.add(Menu.NONE, 2, 2, MenuInterface.infoLabel);
-    	menu.add(Menu.NONE, 3, 3, "Dodaj zakładkę");
+    	menu.add(Menu.NONE, 3, 2, "Dodaj zakładkę");
+    	menu.add(Menu.NONE, 2, 3, MenuInterface.infoLabel);
+    	menu.add(Menu.NONE, 4, 4, "Tryb nocny");
         //MenuInflater inflater = getMenuInflater();
         //inflater.inflate(R.menu.game_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -68,6 +73,9 @@ public class Catalogue extends DroidGap {
     		break;
     	case 3:
     		this.appView.loadUrl("javascript:Menu.bookmark();");
+    		break;
+    	case 4:
+    		this.appView.loadUrl("javascript:Menu.toggleNightMode();");
     		break;
     	default:
     		return super.onOptionsItemSelected(item);

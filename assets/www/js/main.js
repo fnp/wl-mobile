@@ -26,8 +26,10 @@ function onDeviceReady() {
 			History.init(function() {
 				console.log('after history.init');
 				View.init(function() {
-					Catalogue.sync(function() {
-						Catalogue.updateLocal();
+					Menu.init(function() {
+						Catalogue.sync(function() {
+							Catalogue.updateLocal();
+						}, error);
 					}, error);
 				}, error);
 			}, error);

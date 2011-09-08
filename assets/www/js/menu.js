@@ -7,6 +7,10 @@ var Menu = new function() {
 	var self = this;
 	var infoView = "ProjectInfo";
 
+	self.init = function() {
+		window.MenuInterface.setNightMode(View.getNightMode());
+	};
+
 	self.start = function() {
 		History.visit('');
 	};
@@ -19,6 +23,11 @@ var Menu = new function() {
 		var name = prompt('Nazwa zakładki');
 		if (name != null)
 			History.addBookmark(name);
+	};
+
+	self.toggleNightMode = function() {
+		View.toggleNightMode();
+		window.MenuInterface.setNightMode(View.getNightMode());
 	};
 
 	self.setInfoButton = function(view, label, enabled) {
