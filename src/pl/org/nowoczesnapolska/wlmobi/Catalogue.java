@@ -5,7 +5,6 @@
 
 package pl.org.nowoczesnapolska.wlmobi;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;

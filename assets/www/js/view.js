@@ -36,6 +36,7 @@ var View = new function() {
 
 		self.checkNightMode();
 
+		self.at_spinner = false;
 		self.enter('');
 
 		success && success();
@@ -57,13 +58,19 @@ var View = new function() {
 	this.spinner = function(text) {
 		if (!text)
 			text = "Ładowanie";
-		self._content.innerHTML = "";
-		self._content.innerHTML = "<div class='spinner'><img src='img/spinner.png' /><div id='spinnertext'>" + text +"</div></div>";
+		if (self.at_spinner) {
+			document.getElementById("spinnertext").innerHTML = text;
+		}
+		else {
+			self._content.innerHTML = "<div class='spinner'><img src='img/spinner.png' /><div id='spinnertext'>" + text +"</div></div>";
+			self.at_spinner = true;
+		}
 		setOffset(0);
 	};
 
 	this.content = function(text, offset) {
 		console.log('content');
+		self.at_spinner = false;
 
 		self._content.innerHTML = '';
 		self._content.innerHTML = text;

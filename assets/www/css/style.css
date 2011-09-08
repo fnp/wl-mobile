@@ -10,13 +10,12 @@ body {
 	font-family: verdana, arial, helvetica, sans-serif;
 }
 
-.night-mode {
+.night-mode, .night-mode #search {
 	color: #ddd;
 	background: #222;
 }
-.night-mode #search {
-	color: #ddd;
-	background: #222;
+.night-mode a {
+	color: #fff;
 }
 
 .spinner {

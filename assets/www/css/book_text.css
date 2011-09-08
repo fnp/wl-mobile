@@ -4,7 +4,7 @@
  */
 
 #book-text {
-    font-size: 12px;
+	font-size: .9em;
     line-height: 1.5em;
     margin: 0;
 }
@@ -14,123 +14,16 @@
     text-decoration: none;
 }
 
+.night-mode #book-text a {
+    color: #88f;
+}
+
 
 /* ================================== */
 /* = Header with logo and menu      = */
 /* ================================== */
-#book-text #header {
-    margin: 3.4em 0 0 1.4em;
-}
-
-#book-text img {
-    border: none;
-}
-
-
-#book-text #menu {
-    position: fixed;
-    left: 0em;
-    top: 0em;
-    width: 100%;
-    height: 1.5em;
-    background: #333;
-    color: #FFF;
-    opacity: 0.9;
-    z-index: 99;
-}
-
-#book-text #menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#book-text #menu li a {
-    display: block;
-    float: left;
-    width: 7.5em;
-    height: 1.5em;
-    margin-left: 0.5em;
-    text-align: center;
-    color: #FFF;
-}
-
-#book-text #menu li a:hover, #menu li a:active {
-    color: #000;
-    background: #FFF url(/static/img/arrow-down.png) no-repeat center right;
-}
-
-#book-text #menu li a.selected {
-    color: #000;
-    background: #FFF url(/static/img/arrow-up.png) no-repeat center right;
-}
-#book-text #menu a.menu-link {
-    display: block;
-    float: left;
-    height: 1.5em;
-    margin-left: 0.5em;
-    text-align: center;
-    color: #FFF;
-}
-#book-text #menu span {
-    color: #888;
-    font-style: italic;
-    font-size: .75em;
-    margin-right: 0.5em;
-}
-
-
 #book-text #toc, #themes, #nota_red, #info {
-    position: fixed;
-    left: 0em;
-    top: 1.5em;
-    width: 37em;
-    padding: 1.5em;
-    background: #FFF;
-    border-bottom: 0.25em solid #DDD;
-    border-right: 0.25em solid #DDD;
     display: none;
-    height: 16em;
-    overflow-x: hidden;
-    overflow-y: auto;
-    opacity: 0.9;
-    z-index: 99;
-}
-
-#book-text #toc ol, #themes ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#book-text #toc ol li {
-    font-weight: bold;
-}
-
-#book-text #toc ol ol {
-    padding: 0 0 1.5em 1.5em;
-    margin: 0;
-}
-
-#book-text #toc ol ol li {
-    font-weight: normal;
-}
-
-#book-text #toc h2 {
-    display: none;
-}
-
-#book-text #toc .anchor {
-    float: none;
-    margin: 0;
-    color: blue;
-    font-size: 16px;
-    position: inherit;
-}
-
-#book-text #info p {
-    text-align: justify;
-    margin: 1.5em 0 0;
 }
 
 /* =================================================== */
@@ -173,25 +66,7 @@
 /* ======================== */
 #book-text .theme-begin {
 	display:none;
-/*    border-left: 0.1em solid #DDDDDD;
-    color: #777;
-    padding: 0 0.5em;
-
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    letter-spacing: 0;
-    text-transform: none;
-    text-decoration: none;
-    width: 7.5em;
-
-    font-size: 10px;
-    float: right;
-    margin-bottom: 0.5em;
-    clear: both;
-    line-height: 1.5em;
-    text-align: left;
-*/}
+}
 
 #book-text .annotation {
     font-style: normal;
@@ -234,25 +109,6 @@
 /* ============= */
 /* = Numbering = */
 /* ============= */
-/*.verse, .paragraph {
-    position:relative;
-}
-#book-text .anchor {
-    position: absolute;
-    margin: -0.25em -0.5em;
-    left: -3em;
-    color: #777;
-    font-size: 12px;
-    width: 2em;
-    text-align: center;
-    padding: 0.25em 0.5em;
-    line-height: 1.5em;
-}
-
-#book-text .anchor:hover, #book-text .anchor:active {
-    color: #FFF;
-    background-color: #CCC;
-}*/
 #book-text .anchor{display:none;}
 
 /* =================== */
