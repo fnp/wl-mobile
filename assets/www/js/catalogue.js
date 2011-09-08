@@ -99,20 +99,12 @@ var Catalogue = new function() {
 
 		// db initialize
 		// this is Android-specific for now
-		var android = device.version.split('.')[0];
-		if (android > 1) {
-			self.upload_db_android(done, error);
-		} else {
-			error && error("Nieobsługiwana wersja systemu. Wymagany Android>=2.0.");
-		};
+		self.upload_db_android(done, error);
 	};
 
 
 	this.upload_db_android = function(success, error) {
-		// TODO: this should be downloaded from teh net, not stored in res
-
 		console.log('upload db for Android 2.x+');
-		// upload databases description file
 
 		var dbname = "wolnelektury";
 		var db = window.openDatabase(dbname, "1.0", "WL Catalogue", 500000);
