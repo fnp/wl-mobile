@@ -1,0 +1,210 @@
+/*
+ * This file is part of WolneLektury-Mobile, licensed under GNU Affero GPLv3 or later.
+ * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
+ */
+
+body {
+	padding: 0;
+	margin: 0;
+	background: white;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.night-mode, .night-mode #search {
+	color: #ddd;
+	background: #222;
+}
+.night-mode a {
+	color: #fff;
+}
+
+.spinner {
+	margin-top: 4em;
+	text-align: center;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+.spinner img {
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-iteration-count: 10;
+	-webkit-animation-direction: right;
+	-webkit-animation-timing-function:linear;
+}
+#spinnertext {
+	margin-top: 2em;
+	font-size: .7em;
+}
+
+#cover {
+	width: 100%;
+}
+
+#searchbox {
+	font-size: 1.25em;
+	/*background: #84bf2a;*/
+	padding: 3px 3px 6px 0;
+	display: none;
+}
+#search {
+	border: none;
+	width: 100%;
+	padding: 5px 0 5px 0;
+	font-size: 1em;
+}
+#swrap {
+	margin-right:85px;
+	margin-left:80px;
+}
+#searchbutton {
+	width:80px;
+	float:right;
+	margin-top:.5em;
+}
+#content {
+    padding: 10px;
+}
+.button {
+	display: block;
+	background: #ddd;
+    font-size: 1.25em;
+	padding: .5em;
+	margin-bottom: .5em;
+	border-radius: 8px;
+    -webkit-border-radius: 8px;
+	color: #295158;
+}
+.button img {
+	margin-right: .5em;
+	vertical-align: middle;
+}
+.button .sub {
+	font-size: .7em;
+}
+.button .note {
+	font-size: .5em;
+	text-align: right;
+}
+.button img {
+	float:left;
+}
+.button .label {
+	margin-left: 32px;
+}
+
+.button-Book {
+    background: #ccc;
+}
+.button-BookText {
+    background: #ccc;
+}
+.delete {
+	float: right;
+	width: 24px;
+
+	background: #464646;
+    font-size: 1.25em;
+	padding: .5em;
+	margin-bottom: .5em;
+	border-radius: 8px;
+    -webkit-border-radius: 8px;
+	color: white;
+	text-align: center;
+}
+
+h1 .subheader {
+	display:block;
+	font-size: 70%;
+}
+.upper {
+	text-transform: capitalize;
+}
+
+
+.footer {
+	font-size: 0.75em;
+	text-align: center;
+}
+
+.clr {
+	clear: both;
+}
+
+
+.info dt {
+	display: inline;
+	font-weight: bold;
+}
+
+.info dd {
+	display: inline;
+	margin: 0;
+}
+.info img {
+	max-width: 100%;
+}
+
+#top-bar {
+	background-image: -webkit-gradient(linear, left top, left bottom,
+		from(#7d828c),
+		to(#121a2e));
+}
+
+#back-button {
+	display:none;
+	float:left;
+	color: #fff;
+	text-decoration: none;
+	padding: 7px 10px;
+	-webkit-border-radius: 5px;
+
+ background-image: -webkit-gradient(linear, left top, left bottom, 
+	 from(#7d828c),
+	 color-stop(0.5, #303749), 
+	 color-stop(0.5, #121a2e), 
+	 to(#121a2e));
+ border: solid 1px rgba(79, 79, 79, 0.75);
+
+	position: relative;
+	padding-left: 5px;
+	margin-left: 1.5em;
+	margin-top: .5em;
+}
+
+
+#back-button:before {
+	content: " ";
+	display: block;
+	z-index: 0;
+	background-image: 
+		-webkit-gradient(linear, left top, right bottom, 
+	 from(#7d828c),
+	 color-stop(0.5, #303749), 
+	 color-stop(0.5, #121a2e), 
+	 to(#121a2e));
+	border-left: solid 1px #484e59;
+	border-bottom: solid 1px #9aa5bb;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 4px;
+	height: 23.5px;
+	width: 23.5px;
+	display: inline-block;
+	-webkit-transform: rotate(45deg);
+	-webkit-mask-image: 
+		-webkit-gradient(linear, left bottom, right top, 
+			from(#000000), 
+			color-stop(0.5,#000000), 
+			color-stop(0.5, transparent), 
+			to(transparent));
+	position: absolute;
+	left: -9px;
+	top: 2.5px;
+	-webkit-background-clip: content;
+}

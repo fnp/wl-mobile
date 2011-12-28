@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style='width:100%'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4, minimum-scale=.25, user-scalable=1;" />
+
+    <title>Wolne Lektury</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" charset="utf-8" src="js/phonegap-1.1.0.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/NativeControls.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/dbput.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/downloader.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/menuinterface.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/catalogue.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/filerepo.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/history.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/links.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/menu.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/view.js"></script>
+
+    <link rel="stylesheet" type="style/css" href="css/style.css" />
+    <link rel="stylesheet" type="style/css" href="css/book_text.css" />
+</head>
+<body onload='onLoad()' style='width:100%'>
+
+
+<div id="top-bar">
+<button id="back-button" onclick='History.goBack()'>Wstecz</button>
+<div id="searchbox">
+    <form onsubmit="return View.search();">
+    <input id="searchbutton" type="submit" value="Szukaj" />
+    <div id="swrap"><input id="search" /></div>
+    </form>
+</div>
+</div>
+
+<img id="cover" src="img/cover.jpg" />
+<div id="content">
+<p class='footer'>Uruchamianie…</p>
+</div>
+
+</div>
+
+<div id='nothing'></div>
+</body>   
+</html>
