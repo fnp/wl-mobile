@@ -29,10 +29,8 @@ function onDeviceReady() {
 				debug('after history.init');
 				View.init(function() {
 					Menu.init(function() {
+						Catalogue.sync();
 						View.go();
-						Catalogue.sync(function() {
-							Catalogue.updateLocal();
-						}, error);
 					}, error);
 				}, error);
 			}, error);

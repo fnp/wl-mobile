@@ -52,27 +52,7 @@ var Catalogue = new function() {
 	this.init = function(success, error) {
 		debug('Catalogue.init');
 		
-		self.updateDB(function() {
-			if (!self.db)
-				self.db = window.openDatabase("wolnelektury", "1.0", "WL Catalogue", 1000000);
-			if (self.db) {
-				/*var regexp = {
-						onFunctionCall: function(val) {
-							var re = new RegExp(val.getString(0));
-								if (val.getString(1).match(re))
-									return 1;
-								else
-									return 0;
-						}
-					};
-				self.db.createFunction("REGEXP", 2, regexp);*/
-
-				success && success();
-			} else {
-				error && error('Nie mogę otworzyć bazy danych: ' + err);
-			}
-			
-		}, function(err) {
+		self.updateDB(success, function(err) {
 			error && error('Błąd migracji: ' + err);
 		});
 	};
@@ -82,12 +62,18 @@ var Catalogue = new function() {
 	};
 
 
-	/* check if DB needs updating and upload a fresh copy, if so */
+	/* check if DB needs updating and create it, if so */
 	this.updateDB = function(success, error) {
 		var has_ver = window.localStorage.getItem('db_ver');
 		if (has_ver == DB_VER) {
-			debug('db ok, skipping')
-			success && success();
+			debug('db ok, skipping');
+			if (!self.db)
+				self.db = window.openDatabase("wolnelektury", "1.0", "WL Catalogue", 1000000);
+			if (self.db) {
+				success && success();
+			} else {
+				error && error('Nie mogę otworzyć bazy danych: ' + err);
+			}
 			return;
 		}
 
@@ -99,7 +85,6 @@ var Catalogue = new function() {
 		};
 
 		// db initialize
-		// this is Android-specific for now
 		self.createdb(done, error);
 	};
 
@@ -141,13 +126,9 @@ var Catalogue = new function() {
 			sqls.push('CREATE TABLE IF NOT EXISTS state (last_checked INTEGER);');
 			sqls.push('DELETE FROM state;');
 			sqls.push('INSERT INTO state (last_checked) VALUES(0);');
-			self.chainSqls(sqls, success, error);
-			/*DBPut.fetch(WL_INITIAL, function(data) {
-				debug('db fetch successful');
-				success && success();
-			}, function(data) {
-				error && error('Błąd podczas pobierania bazy danych: ' + data);
-			});*/
+			// create database and sync it
+			self.chainSqls(sqls, function() {self.sync(success, error);}, error);
+
 		} else {
 			error && error('Błąd podczas inicjowania bazy danych: ' + data);
 		}
@@ -364,7 +345,7 @@ var Catalogue = new function() {
 
 		sqls.push("UPDATE state SET last_checked=" + data.time_checked);
 
-		self.chainSqls(sqls, success, error);
+		self.chainSqls(sqls, function() {self.updateLocal(); success && success();}, error);
 	};
 
 
@@ -383,7 +364,6 @@ var Catalogue = new function() {
 			}
 			xhr.send();
 		});
-		success && success();
 	};
 
 	this.updateLocal = function() {

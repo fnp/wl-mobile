@@ -53,7 +53,7 @@ var View = new function() {
 	};
 
 	this.hideSearch = function() {
-		self._searchbox.style.display = "none";
+		//self._searchbox.style.display = "none";
 	};
 
 	this.spinner = function(text) {

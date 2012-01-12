@@ -10,7 +10,7 @@ var Menu = new function() {
 
 	self.init = function(success) {
 		window.plugins.nativeControls.createTabBar(); 
-		window.plugins.nativeControls.createTabBarItem("start", "Początek","/www/img/icon-Last.png", {onSelect: Menu.start}); 
+		window.plugins.nativeControls.createTabBarItem("start", "Początek","/www/img/icon-Home.png", {onSelect: Menu.start}); 
 		window.plugins.nativeControls.createTabBarItem("addmark","Dodaj zakładkę","/www/img/icon-Bookmarks.png", {onSelect: Menu.bookmark}); 
 		
 		//window.plugins.nativeControls.createTabBarItem("info",self.infoLabel,"/www/img/icon-Tag.png", {onSelect: Menu.info}); 
@@ -42,7 +42,8 @@ var Menu = new function() {
 	self.setNightModeLabel = function() {
 		var label = 'Tryb nocny';
 		if (View.getNightMode()) label = 'Tryb dzienny';
-		window.plugins.nativeControls.createTabBarItem("night",label,"/www/img/icon-Tag.png", {onSelect: Menu.toggleNightMode}); 
+		window.plugins.nativeControls.createTabBarItem("night",label,"/www/img/icon-Night.png", {onSelect: Menu.toggleNightMode}); 
+		self.refresh();
 	};
 
 	self.refresh = function() {
@@ -65,6 +66,6 @@ var Menu = new function() {
 	self.setInfoButton = function(view, label, enabled) {
 		self.infoView = view;
 		self.showInfo = enabled;
-		window.plugins.nativeControls.createTabBarItem("info",label,"/www/img/icon-Tag.png", {onSelect: Menu.info}); 
+		window.plugins.nativeControls.createTabBarItem("info",label,"/www/img/icon-Info.png", {onSelect: Menu.info}); 
 	};
 }
