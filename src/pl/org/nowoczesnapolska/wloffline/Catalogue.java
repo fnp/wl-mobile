@@ -3,7 +3,7 @@
  * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
  */
 
-package pl.org.nowoczesnapolska.wlmobi;
+package pl.org.nowoczesnapolska.wloffline;
 
 import android.os.Bundle;
 import android.view.KeyEvent;

@@ -3,13 +3,7 @@
  * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
  */
 
-var DB_VER = '0.9.15';
-
-var WL_INITIAL = WL + '/media/api/mobile/initial/initial.db';
-var WL_UPDATE = WL + '/api/changes/SINCE.json?book_fields=author,html,parent,parent_number,sort_key,title' +
-		'&tag_fields=books,category,name,sort_key' +
-		'&tag_categories=author,epoch,genre,kind';
-
+var DB_VER = 'o0.2';
 
 
 var categories = {'author': 'autor',
@@ -55,17 +49,6 @@ var Catalogue = new function() {
 		self.updateDB(function() {
 			self.db = window.openDatabase("wolnelektury", "1.0", "WL Catalogue", 1);
 			if (self.db) {
-				/*var regexp = {
-						onFunctionCall: function(val) {
-							var re = new RegExp(val.getString(0));
-								if (val.getString(1).match(re))
-									return 1;
-								else
-									return 0;
-						}
-					};
-				self.db.createFunction("REGEXP", 2, regexp);*/
-
 				success && success();
 			} else {
 				error && error('Nie mogę otworzyć bazy danych: ' + err);
@@ -91,7 +74,6 @@ var Catalogue = new function() {
 		}
 
 		var done = function() {
-			FileRepo.clear();
 			window.localStorage.setItem('db_ver', DB_VER);
 			console.log('db updated');
 			success && success();
@@ -107,21 +89,23 @@ var Catalogue = new function() {
 		console.log('upload db for Android 2.x+');
 
 		var dbname = "wolnelektury";
-		var db = window.openDatabase(dbname, "1.0", "WL Catalogue", 500000);
-		if (db) {
-			console.log('db created successfully');
-			DBPut.fetch(WL_INITIAL, function(data) {
-				console.log('db fetch successful');
-				success && success();
+		window.AssetCopy.copy("initial/Databases.db",
+			"/data/data/pl.org.nowoczesnapolska.wloffline/app_database/Databases.db", true,
+			function(data) {
+				console.log('db descriptor upload successful');
+				window.AssetCopy.copy("initial/0000000000000001.db",
+					"/data/data/pl.org.nowoczesnapolska.wloffline/app_database/file__0/0000000000000001.db", true,
+					function(data) {
+						console.log('db upload successful');
+						success && success();
+					}, function(data) {
+						error && error("database upload error: " + data);
+					});
 			}, function(data) {
-				error && error('Błąd podczas pobierania bazy danych: ' + data);
+				error && error("database descriptor upload error: " + data);
 			});
-		} else {
-			error && error('Błąd podczas inicjowania bazy danych: ' + data);
-		}
 	};
-
-
+	
 	this.withState = function(callback) {
 		self.db.transaction(function(tx) {
 			tx.executeSql("SELECT * FROM state", [], 
@@ -283,93 +267,4 @@ var Catalogue = new function() {
 	};
 
 
-	self.update = function(data, success, error) {
-		var addBookSql = new Sql("\
-			INSERT OR REPLACE INTO book \
-				(id, title, html_file,  html_file_size, parent, parent_number, sort_key, pretty_size, authors) \
-			VALUES \
-				('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')");
-		var addTagSql = new Sql("INSERT OR REPLACE INTO tag (id, category, name, sort_key, books) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')");
-
-		var sqls = [];
-
-		if (data.deleted) {
-			for (i in data.deleted.books) {
-				var book_id = data.deleted.books[i];
-				sqls.push("DELETE FROM book WHERE id=" + book_id);
-				FileRepo.deleteIfExists(book_id);
-			}
-
-			for (i in data.deleted.tags) {
-				var tag_id = data.deleted.tags[i];
-				sqls.push("DELETE FROM tag WHERE id=" + tag_id);
-			}
-		}
-
-		if (data.updated) {
-			for (i in data.updated.books) {
-				var book = data.updated.books[i];
-				if (!book.html) book.html = {};
-				if (!book.html.url) book.html.url = '';
-				if (!book.html.size) book.html.size = '';
-				if (!book.parent) book.parent = '';
-				if (!book.parent_number) book.parent_number = '';
-				var pretty_size = prettySize(book.html.size);
-				sqls.push(addBookSql.prepare(
-					book.id, book.title, book.html.url, book.html.size,
-					book.parent, book.parent_number, book.sort_key, pretty_size, book.author
-				));
-				FileRepo.deleteIfExists(book.id);
-			}
-
-			for (i in data.updated.tags) {
-				var tag = data.updated.tags[i];
-				var category = categories[tag.category];
-				var books = tag.books.join(',');
-				sqls.push(addTagSql.prepare(tag.id, category, tag.name, tag.sort_key, books));
-			}
-		}
-
-		sqls.push("UPDATE state SET last_checked=" + data.time_checked);
-
-		self.chainSqls(sqls, success, error);
-	};
-
-
-	this.sync = function(success, error) {
-		self.withState(function(state) {
-			var url = WL_UPDATE.replace("SINCE", state.last_checked); 
-			console.log('sync: ' + url);
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", url);
-			xhr.onload = function() {
-				console.log('sync: fetched by ajax: ' + url);			
-				self.update(JSON.parse(xhr.responseText), success, error);
-			}
-			xhr.onerror = function(e) {
-				error && error("Błąd aktualizacji bazy danych." + e);
-			}
-			xhr.send();
-		});
-	};
-
-	this.updateLocal = function() {
-		FileRepo.withLocal(function(local) {
-			self.db.transaction(function(tx) {
-				tx.executeSql("UPDATE book SET _local=0", [], function(tx, results) {
-					ll = local.length;
-					var ids = [];
-					for (var i = 0; i < ll; i ++) {
-						ids.push(local[i].name);
-					}
-					ids = ids.join(',');
-					tx.executeSql("UPDATE book SET _local=1 where id in ("+ids+")"); 
-				});
-			});
-		}, function() {
-			self.db.transaction(function(tx) {
-				tx.executeSql("UPDATE book SET _local=0");
-			});
-		});
-	};
 }

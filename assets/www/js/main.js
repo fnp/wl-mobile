@@ -7,7 +7,7 @@ var WL = 'http://www.wolnelektury.pl';
 
 
 // disable debugging
-console.log = function(text) {};
+//console.log = function(text) {};
 
 
 function onLoad() {

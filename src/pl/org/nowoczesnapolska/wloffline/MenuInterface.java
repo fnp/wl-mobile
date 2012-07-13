@@ -3,7 +3,7 @@
  * Copyright © Fundacja Nowoczesna Polska. See NOTICE for more information.
  */
 
-package pl.org.nowoczesnapolska.wlmobi;
+package pl.org.nowoczesnapolska.wloffline;
 
 import org.json.JSONArray;
 import org.json.JSONException;

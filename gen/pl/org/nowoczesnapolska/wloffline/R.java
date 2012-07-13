@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package pl.org.nowoczesnapolska.wlmobi;
+package pl.org.nowoczesnapolska.wloffline;
 
 public final class R {
     public static final class attr {

@@ -17,7 +17,6 @@
     <plugin name="FileTransfer" value="com.phonegap.FileTransfer"/>
     <plugin name="Capture" value="com.phonegap.Capture"/>
 
-	<plugin name="Downloader" value="pl.org.nowoczesnapolska.wlmobi.Downloader" />
-	<plugin name="DBPut" value="pl.org.nowoczesnapolska.wlmobi.DBPut" />
-	<plugin name="MenuInterface" value="pl.org.nowoczesnapolska.wlmobi.MenuInterface" />
+	<plugin name="AssetCopy" value="pl.org.nowoczesnapolska.wloffline.AssetCopy" />
+	<plugin name="MenuInterface" value="pl.org.nowoczesnapolska.wloffline.MenuInterface" />
 </plugins>
