@@ -46,7 +46,7 @@ public class Catalogue extends DroidGap {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-    	MenuItem mi = menu.getItem(1);
+    	MenuItem mi = menu.getItem(2);
     	mi.setTitle(MenuInterface.infoLabel);
     	mi.setEnabled(MenuInterface.infoEnabled);
     	return super.onPrepareOptionsMenu(menu);
